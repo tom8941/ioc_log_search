@@ -38,7 +38,9 @@ ls /var/log/logs-*.gz --sshloginfile nodefile /opt/ioc_log_search.py -d /opt/ioc
 This script can be run with parallel in order to get result faster.
 
 ex : 
+```
 ls /var/log/logs-*.gz | parallel --sshloginfile nodefile /opt/ioc_log_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z
+```
 
 **External Source :**
 
