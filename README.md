@@ -17,11 +17,11 @@ Please adapt these settings to your log format.
 Parameters : 
 
 - -l / --log : log file to analyse (text readable format)
-OR
 - -z / --zlog : Compressed log file (readable with zcat)
-
 - -i / --ipioc : file that contains ioc ip (1 per line)
 - -d / --domioc : file that contains ioc domains (1 per line)
+
+-l and -z are not usable at the same time
 
 ex:
 
