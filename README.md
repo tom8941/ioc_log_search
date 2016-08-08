@@ -44,6 +44,19 @@ ex :
 ls /var/log/logs-*.gz | parallel --sshloginfile nodefile /opt/ioc_log_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z
 ```
 
+**Performances**
+
+Some tests have been done on virtual hosts.
+Storage was reaching 5000 IOPS.
+log files used are gzip files (200Mb compressed for one file)
+
+```
+#of IOC     #of log files      #of core      #of virtual servers    time
+164951       1                 1             1                      48sec        ---
+164951       468               42            6                      4min39        --- with parallel
+164951       5667              42            6                      1H05          --- with parallel
+```
+
 **External Source :**
 
 http://www.gnu.org/software/parallel/
