@@ -14,8 +14,9 @@ IP_POS = -4 # position of the IP in the split log array
 DOM_POS = 6 # url of the IP in the split log array
 
 parser = argparse.ArgumentParser(description='search ioc in logs')
-parser.add_argument("-l", "--log", help="log file")
-parser.add_argument("-z", "--zlog", help="GZ compressed log file")
+argloggroup = parser.add_mutually_exclusive_group()
+argloggroup.add_argument("-l", "--log", help="log file")
+argloggroup.add_argument("-z", "--zlog", help="Compressed log file")
 parser.add_argument("-i", "--ipioc", help="Ip ioc file")
 parser.add_argument("-d", "--domioc", help="Domain ioc file")
 
