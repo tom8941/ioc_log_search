@@ -5,11 +5,13 @@ This script has been done to look for IOC in a huge number of logs.
 proxy_ioc_search.py is able to look for ip ioc and domains ioc.
 simple_ioc_search.py takes only an ioc file and do a simple search in the logs without any specific treatments.
 
-**Usage :**
+## proxy_ioc_search.py
+
+### Usage :
 
 Assuming that /opt/iocdom.txt contains ioc domains and /opt/iocip.txt ioc ip.
 
-Configure parsing:
+**Configure parsing:**
 
 Please adapt these settings to your log format.
 
@@ -17,7 +19,7 @@ Please adapt these settings to your log format.
 - IP_POS = -4 # position of the IP in the split log array (you can use negative numbers to count from end)
 - DOM_POS = 6 # url of the IP in the split log array
 
-Parameters : 
+**Parameters :**
 
 - -l / --log : log file to analyse (text readable format)
 - -z / --zlog : Compressed log file (readable with zcat)
@@ -32,7 +34,7 @@ ex:
 /opt/proxy_ioc_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z /var/log/logs-20160808.gz
 ```
 
-**Parallel search :**
+### Parallel search :
 
 This script can be run with parallel in order to get result faster.
 
@@ -41,7 +43,7 @@ ex :
 ls /var/log/logs-*.gz | parallel --sshloginfile nodefile /opt/proxy_ioc_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z
 ```
 
-**Performances**
+### Performances
 
 Some tests have been done on virtual hosts.
 Storage was reaching 5000 IOPS.
@@ -54,7 +56,7 @@ log files used are gzip files (200Mb compressed for one file)
 164951       5667              42            6                      1H05          --- with parallel
 ```
 
-**External Source :**
+## External Source :
 
 http://www.gnu.org/software/parallel/
 
