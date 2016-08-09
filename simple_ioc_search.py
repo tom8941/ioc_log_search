@@ -1,13 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import re
-import time
-import sys
-import gzip
 import argparse
 import os
-import datetime
 
 parser = argparse.ArgumentParser(description='search ioc in logs')
 argloggroup = parser.add_mutually_exclusive_group()
