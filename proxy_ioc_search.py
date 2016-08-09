@@ -2,12 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import re
-import time
-import sys
-import gzip
 import argparse
 import os
-import datetime
 
 SPLIT_CHAR = ' ' # separator to split log file
 IP_POS = -4 # position of the IP in the split log array
