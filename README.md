@@ -7,7 +7,7 @@ This script has been done to look for IOC in a huge number of logs.
 
 ## proxy_ioc_search.py
 
-### Usage :
+### Usage
 
 Assuming that /opt/iocdom.txt contains ioc domains and /opt/iocip.txt ioc ip.
 
@@ -34,7 +34,7 @@ ex:
 /opt/proxy_ioc_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z /var/log/logs-20160808.gz
 ```
 
-### Parallel search :
+**Parallel search :**
 
 This script can be run with parallel in order to get result faster.
 
@@ -56,7 +56,7 @@ log files used are gzip files (200Mb compressed for one file)
 164951       5667              42            6                      1H05          --- with parallel
 ```
 
-## External Source :
+## External Source
 
 http://www.gnu.org/software/parallel/
 
