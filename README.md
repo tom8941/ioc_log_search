@@ -26,13 +26,13 @@ Parameters :
 ex:
 
 ```
-/opt/ioc_log_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z /var/log/logs-20160808.gz
+/opt/proxy_ioc_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z /var/log/logs-20160808.gz
 ```
 
 or to match multiple files:
 
 ```
-ls /var/log/logs-*.gz --sshloginfile nodefile /opt/ioc_log_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z
+ls /var/log/logs-*.gz --sshloginfile nodefile /opt/proxy_ioc_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z
 ```
 
 **Parallel search :**
@@ -41,7 +41,7 @@ This script can be run with parallel in order to get result faster.
 
 ex : 
 ```
-ls /var/log/logs-*.gz | parallel --sshloginfile nodefile /opt/ioc_log_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z
+ls /var/log/logs-*.gz | parallel --sshloginfile nodefile /opt/proxy_ioc_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z
 ```
 
 **Performances**
