@@ -17,8 +17,8 @@ Assuming that /opt/iocdom.txt contains ioc domains and /opt/iocip.txt ioc ip.
 Please adapt these settings to your log format.
 
 - SPLIT_CHAR = ' ' # separator to split log file
-- IP_POS = -4 # position of the IP in the split log array (you can use negative numbers to count from end)
-- DOM_POS = 6 # url of the IP in the split log array
+- IP_POS = -4 # index of the IP in the split log array (you can use negative numbers to count from end)
+- DOM_POS = 6 # index of the url in the split log array
 
 **Parameters :**
 
@@ -44,9 +44,42 @@ ex :
 ls /var/log/logs-*.gz | parallel --sshloginfile nodefile /opt/proxy_ioc_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z 
 ```
 
-### Performances
+##simple_ioc_search.py
 
-Some tests have been done on virtual hosts.
+### Usage
+
+Assuming that /opt/ioc.txt contains ioc.
+
+**Configure parsing:**
+
+**Parameters :**
+
+- -l / --log : log file to analyse (text readable format)
+- -z / --zlog : Compressed log file (readable with zcat)
+- -i / --ioc : file that contains ioc (1 per line)
+- -s / --split : character to use to split the log
+- -p / --position : index of attibute search among the split log
+
+-l and -z are not usable at the same time
+
+ex:
+
+```
+/opt/simple_ioc_search.py -i /opt/ioclist.txt -s " " -p -4 -z /var/log/log-20160808
+```
+
+**Parallel search :**
+
+This script can be run with parallel in order to get result faster.
+
+ex : 
+```
+ls /var/log/log-201608* |  parallel --sshloginfile nodefile '/opt/simple_ioc_search.py -i /opt/ioclist.txt -s " " -p -4 -z '
+```
+
+## Performances
+
+Some tests have been done on virtual hosts with proxy_ioc_search.py .
 Storage was reaching 5000 IOPS.
 log files used are gzip files (200Mb compressed for one file)
 
