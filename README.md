@@ -1,6 +1,7 @@
 # ioc_log_search
 
-This script has been done to look for IOC in a huge number of logs.
+This script has been done to look for big number of IOC in a huge number of logs.
+It loads in memory the list of IOC and use the python set structure for it's fast search functionalities.
 
 - proxy_ioc_search.py is able to look for ip ioc and domains ioc.
 - simple_ioc_search.py takes only an ioc file and do a simple search in the logs without any specific treatments.
