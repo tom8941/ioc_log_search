@@ -2,8 +2,8 @@
 
 This script has been done to look for IOC in a huge number of logs.
 
-proxy_ioc_search.py is able to look for ip ioc and domains ioc.
-simple_ioc_search.py takes only an ioc file and do a simple search in the logs without any specific treatments.
+- proxy_ioc_search.py is able to look for ip ioc and domains ioc.
+- simple_ioc_search.py takes only an ioc file and do a simple search in the logs without any specific treatments.
 
 ## proxy_ioc_search.py
 
