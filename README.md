@@ -79,6 +79,8 @@ ls /var/log/log-201608* |  parallel --sshloginfile nodefile '/opt/simple_ioc_sea
 ## Get data from checkioc project
 
 ex:
+
+In this example, we are taking the last 10 days iocs. The invalid ioc (CS5=NOK) will be discarded from *ioc_dom_host.txt and *ioc_ip.txt files.
 ```
 #Get data from last 10 days
 checkioc.py -l 10d -o domain hostname ip-src ip-dst -v > /opt/$(date +%Y%m%d)_ioc
