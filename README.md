@@ -77,6 +77,20 @@ ex :
 ls /var/log/log-201608* |  parallel --sshloginfile nodefile '/opt/simple_ioc_search.py -i /opt/ioclist.txt -s " " -p -4 -z '
 ```
 
+## Get data from checkioc project
+```
+ex:
+
+#Get data from last 10 days
+checkioc.py -l 10d -o domain hostname ip-src ip-dst -v > /opt/$(date +%Y%m%d)_ioc
+
+#cut the syslog format to get the ioc
+cat /opt/$(date +%Y%m%d)_ioc | grep cs5=OK | grep '|domain\||hostname' | egrep -o 'msg=.* act=' | sed 's/msg=//g' | sed 's/ act=//g' | sort | uniq > /opt/$(date +%Y%m%d)ioc_dom_host.txt
+
+#cut the syslog format to get the ioc
+cat /opt/$(date +%Y%m%d)_ioc | grep cs5=OK | grep '|ip-src\||ip-dst' | egrep -o 'msg=(.*) act=' | sed 's/msg=//g' | sed 's/ act=//g' | sort | uniq > /opt/$(date +%Y%m%d)ioc_ip.txt
+```
+
 ## Performances
 
 Some tests have been done on virtual hosts with proxy_ioc_search.py .
