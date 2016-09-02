@@ -105,7 +105,9 @@ log files used are gzip files (200Mb compressed for one file)
 
 ## External Source
 
-http://www.gnu.org/software/parallel/
+- http://www.gnu.org/software/parallel/
 
 O. Tange (2011): GNU Parallel - The Command-Line Power Tool,
 ;login: The USENIX Magazine, February 2011:42-47.
+
+- MISP-IOC-Validator : https://github.com/tom8941/MISP-IOC-Validator
