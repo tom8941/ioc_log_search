@@ -30,7 +30,6 @@ Please adapt these settings to your log format.
 -l and -z are not usable at the same time
 
 ex:
-
 ```
 /opt/proxy_ioc_search.py -d /opt/iocdom.txt -i /opt/iocip.txt -z /var/log/logs-20160808.gz
 ```
@@ -78,9 +77,9 @@ ls /var/log/log-201608* |  parallel --sshloginfile nodefile '/opt/simple_ioc_sea
 ```
 
 ## Get data from checkioc project
-```
-ex:
 
+ex:
+```
 #Get data from last 10 days
 checkioc.py -l 10d -o domain hostname ip-src ip-dst -v > /opt/$(date +%Y%m%d)_ioc
 
